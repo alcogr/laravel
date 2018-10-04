@@ -52,7 +52,7 @@
 			</div>
 		</div>
 	</nav>
-
+	
 	@yield('content')
 
 	<!-- Scripts -->

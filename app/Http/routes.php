@@ -11,11 +11,19 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index');
+Route::get('/', 'PostsController@index');
 
-Route::get('home', 'HomeController@index');
+Route::get('/home', [
+	'uses' => 'PostsController@index',
+	'as' => 'home'
+]);
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
+]);
+
+Route::post('/createpost', [ 
+	'uses' => 'PostsController@create',
+	'as' => 'create.post'
 ]);
